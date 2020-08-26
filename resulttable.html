@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body style="background-color: #D6EEFF;text-align: center; font-family: cursive;">
+		
+		<div style="margin-top: 0px; letter-spacing: 3px;color:black; font-size: 90px;font-family: cursive ;  text-shadow:     
+					0 0.5px 0 hsl(174,15%,84%),
+					0 1px 0 hsl(174,5%,82%),
+					0 1.5px 0 hsl(174,5%,80%),
+	                 0 2px 0 hsl(174,5%,78%),
+	                 0 2.5px 0 hsl(174,5%,76%),
+	                 0 3px 0 hsl(174,5%,74%),
+	                 0 3.5px 0 hsl(174,5%,72%),
+	
+	                 0 0 5px rgba(0,0,0,.2),
+	                0 1px 3px rgba(0,0,0,.4),
+	                0 3px 5px rgba(0,0,0,.6),
+	               0 5px 10px rgba(0,0,0,.8) "><b> CONCRETE-O-METER </b></div>
+
+		<br> 
+		
+		<table border="5" align="center" width="700px" style="text-align: center; border-style: ridge; border-color: black; border-width: 2px ; background-color: white"> 
+			<tr style="height: 50px; background-color: yellow">
+				<th>SL. NO.</th>
+				<th>MATERIAL NAME</th>
+				<th>QUANTITY (KG)</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>Cement Content</td>
+				<td id="cc"></td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>Water</td>
+				<td id="w"></td>
+			</tr>
+			<tr>
+				<td style="border-bottom: 0px"></td>
+				<td>Fine Aggregate</td>
+				<td id="fa"></td>
+			</tr>
+			<tr >
+				<td style="border-bottom: 0px ; border-top: 0px;">3</td>
+				<td>a) White Sand</td>
+				<td id="aws"></td>
+			</tr>
+			<tr>
+				<td style=" border-top: 0px;"></td>
+				<td>b) Black Sand</td>
+				<td id="bbs"></td>
+			</tr>
+			<tr>
+				<td style="border-bottom: 0px"></td>
+				<td>Coarse Aggregate</td>
+				<td id="ca"></td>
+			</tr>
+			<tr>
+				<td style="border-bottom: 0px ; border-top: 0px;">4</td>
+				<td>a) Coarse Aggregate(20mm)</td>
+				<td id="aca"></td>
+			</tr>
+			<tr>
+				<td style="border-bottom: 0px ; border-top: 0px;"></td>
+				<td>b) Coarse Aggregate(10mm Grit)</td>
+				<td id="bca"></td>
+			</tr>
+			<tr>
+				<td style=" border-top: 0px;"></td>
+				<td>Slum of Concrete</td>
+				<td>50-100</td>
+			</tr>
+		</table>
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+		<div>Design Grade : 
+		<input id="dg"  type="number" onchange="fetchData()" name="DesignGrade"></div><br>
+
+		<div style="padding-left: 60px;" id="tms" >TMS = </div><br>
+
+		<div style="padding-left: 60px;" id="wc" onchange="">W/C = </div><br>
+
+		<div>Max. size of Aggregate : 
+		<input id="maxaggr" type="number" onchange="wContsCont()" name="MaxSizeOfAggr" ></div><br>
+
+		<div style="padding-left: 60px;" id="wcont" >Water Content = </div><br>
+
+		<div style="padding-left: 60px;" id="scont" onchange="">Sand Content = </div><br>
+
+		<div>Fineness Modulus : 
+		<input id="fmod" type="number" step="0.1" onchange="" name="FinenessModulus" ></div><br>
+
+		<div>Sand Confirming Zone : 
+		<input id="szone" type="number" onchange="sandCorr()" name="sandZone" ></div><br>
+
+		<div style="padding-left: 60px;" id="corrWcont" >Correction in water content = </div><br>
+
+		<div style="padding-left: 60px;" id="corrScont" >Correction in sand content = </div><br>
+
+		<div style="padding-left: 60px;" id="cementCont" >Cement content = </div><br>
+
+
+		<div>Specific Gravity of Cement : 
+		<input id="sGravCem" type="number" step="0.01" onchange="speGravCm()" ></div><br>
+
+		<div>Specific Gravity : </div>
+		<div style="padding-left: 60px;">
+			(i) Fine Aggregate : <input id="sGravf" type="number" step="0.01" onchange="sgravfm()"  ><br>
+			(ii)Coarse Aggregate : <input id="sGravc" type="number" step="0.01" onchange="sgravcm()" ></div><br>
+
+	
+		<div>Moisture Content(%) : </div>
+		<div style="padding-left: 60px;">
+			(i) Fine Aggregate : <input id="mContf" type="number" step="0.01" onchange="mcontfm()" ><br>
+			(ii)Coarse Aggregate : <input id="mContc" type="number" step="0.01" onchange="mcontcm()" ></div><br>
+
+		<div>Water Absorption(%) : </div>
+		<div style="padding-left: 60px;">
+			(i) Fine Aggregate : <input id="wAbsf" type="number" step="0.01" onchange="wAbsfm()" ><br>
+			(ii)Coarse Aggregate : <input id="wAbsc" type="number" step="0.01" onchange="wAbscm()" ></div><br>
+
+		<div>Estimated Air Contain(%) =  <b> 1</b></div><br>
+
+		<div>Volume of Concrete(m^3) =  <b>1</b></div><br>
+
+		<div id="qtyFagg">Quantity of Fine Aggregate = </div><br>
+
+		<div id="qtyCagg">Quantity of Coarse Aggregate = </div><br>
+
+		<div id="corrQtyFagg">Correction in Qty. of Fine Aggregate = </div><br>
+
+		<div id="corrQtyCagg">Correction in Qty. of coarse Aggregate = </div><br>
+
+		<div id="corrQtyWater">Correction in Qty. of Water = </div><br>
+
+    <script src="Calculation.js"></script>
+</body>
+</html>
