@@ -1,7 +1,7 @@
 <?php
 
         //mysqli_connect(host,username,password,dbname,port,socket);
-  $link = mysqli_connect("localhost","Prithwijit","vickY1811","IOT_Database");
+  $link = mysqli_connect("148.66.137.118","Prithwijit","vickY1811","IOT_Database");
   
   if(mysqli_connect_error()) {
     die("There was an error");
